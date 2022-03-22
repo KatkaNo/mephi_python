@@ -1,0 +1,82 @@
+day = input('Введите день недели: ')
+count = 1
+days = ('понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье')
+for i in ('понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'):
+    if i == day:
+        print(count)
+    else:
+        count += 1
+
+
+
+n = 0
+for pirat in range(10):
+    text = input('Введите текст: ')
+    if (text == 'Карамба'):
+        n += 1
+print('Кол-во пиратов = ', n)
+
+
+
+text = input('Введите текст: ')
+a = text.find("*") + 1
+print("'*' стоит на позиции ", a)
+
+
+
+row = int(input('Введите кол-во рядов: '))
+seat = int(input('Введите кол-во сидений в ряду: '))
+whitespace = int(input('Введите кол-во метров между рядами: '))
+print()
+print('Сцена')
+print()
+for i in range(row):
+    print('=' * seat, '*' * whitespace, '=' * seat)
+
+
+
+
+
+x = 8
+y = 10
+where = input('Марсоход находится на позиции 8, 10 введите команду: ')
+
+while x != -1 and y != -1:
+    if x < 15 and y <20:
+        if where == 'w':
+            y += 1
+            print('Марсоход находится на позиции', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 's':
+            y -= 1
+            print('Марсоход находится на позиции', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 'a':
+            x -= 1
+            print('Марсоход находится на позиции', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 'd':
+            x += 1
+            print('Марсоход находится на позиции', x, y,'введите команду: ', end='')
+            where = input()
+    else:
+        if where == 'w':
+            y += 1
+            print('Марсоход находится на границе', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 's':
+            y -= 1
+            print('Марсоход находится на границе', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 'a':
+            x -= 1
+            print('Марсоход находится на границе', x, y,'введите команду: ', end='')
+            where = input()
+        elif where == 'd':
+            x += 1
+            print('Марсоход находится на границе', x, y,'введите команду: ', end='')
+            where = input()
+
+
+
+
