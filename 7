@@ -1,0 +1,135 @@
+n = 100
+month = 0
+for i in range(n, -1, -4):
+   print('Месяц', month, ': осталось', i, 'кг гречки')
+   month += 1
+   
+   
+   
+n = int(input('Введите количество должников: '))
+summary = 0
+for i in range (0, n + 1, 5):
+    print('Должник с номером ', i)
+    rest = int(input('Сколько должны? '))
+    summary += rest
+print('Общая сумма долга: ',summary)
+
+
+
+n = int(input('Введите кол-во секунд до взрыва бомбы: '))
+for i in range(n, 0, -1):
+    x = int(input('Хотите ли вы обезвредить бомбу? 0 - нет, 1 - да: '))
+    if x == 0:
+        if i - 1 == 0:
+            print('Бомба взорвалась')
+        else:
+            print(i - 1, 'Секунд до взрыва')
+    elif x == 1:
+        print("Бомба обезврежена за ", i, "секунд до взрыва")
+        break
+        
+        
+        
+a = int(input('Введите число а: '))
+b = int(input('Введите число b: '))
+c = int(input('Введите число с: '))
+summ = 0
+count = 0
+for i in range(a, b +1):
+    if i % c == 0:
+        count += 1
+        summ += i
+if count == 0:
+    print('Расчет невозможен, так как нет подходящих чисел')
+else:
+    print(summ / count)
+
+
+
+a = int(input('Введите начало отрезка: '))
+b = int(input('Введите конец отрезка: '))
+c = int(input('Введите шаг: '))
+y = 0
+for x in range(b, a - 1, -c):
+    y = x ** 3 + 2 * (x ** 2) - 4 * x + 1
+    print('В точке ', x, 'функция равна ', y)
+
+
+
+l1 = int(input('Введите размер листа: '))
+l2 = l1
+convert = 12
+i = 0
+while convert < l1 or convert < l2:
+    if convert < l1:
+        i += 1
+        l1 = l1 / 2
+        if convert < l2:
+            i += 1
+            l2 = l2 / 2
+print('Сложить ', i, 'раз')
+
+
+
+educational_grant = int(input('Введите размер степендии: '))
+expenses = int(input('Введите расходы на проживание: '))
+mounth = 10
+summ = expenses
+for i in range(2, mounth + 1):
+    expenses = expenses * 1.03
+    summ = summ + expenses
+print('У родителей необходимо попросить: ', (summ - educational_grant * mounth) // 1 + 1, 'рублей')
+
+
+
+number = int(input('Введите натуральное число: '))
+s = 1
+x = 1
+for n in range(1, number + 1):
+    x = ((-1) ** n) / (2 ** n)
+    s += x
+print('Член ряда ', x,'сумма ряда ', s)
+
+
+
+x = int(input('Введите число x: '))
+chis = 1
+znam = 1
+a = 1
+b = 2
+res = 1
+
+for i in range(1, 6):
+    chis *= (x - a)
+    a = 2 * a + 1
+chis *= (x - a)
+
+for k in range (1,7):
+    znam *= (x - b)
+    b *= 2
+    
+if znam != 0:
+    print(chis / znam)
+else: 
+    print('На 0 делить нельзя')
+    
+
+
+boys = int(input('Введите кол-во мальчиков: '))
+girls = int(input('Введите кол-во девочек: '))
+answer = ''
+if (boys > 2 * girls) or (girls > 2 * boys):
+    print('Нет решения.')
+elif boys >= girls:
+    k = boys - girls
+    for bgb in range(k):
+        answer += 'BGB'
+    for bg in range(girls - k):
+        answer += 'BG'
+else:
+    k = girls - boys
+    for gbg in range(k):
+        answer += 'GBG'
+    for gb in range(boys - k):
+        answer += 'GB'
+print(answer)
