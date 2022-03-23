@@ -80,3 +80,39 @@ while x != -1 and y != -1:
 
 
 
+string = input() + 'oops'
+a = []
+k = 0
+for i in string:
+    if i == 's':
+        k += 1
+    else:
+        a.append(k)
+        k = 0
+print('Самая длинная последовательность: ', max(a))
+
+
+
+string = input('Введите строку: ')
+i = 0
+lengh = []
+
+for word in string:
+    if word != ' ':
+        i += 1
+        lengh.append(i)
+    else: 
+        i = 0
+print ('Самое длинное слово, букв: ',max(lengh))
+
+
+
+sign = int(input('Введите кол-во знаков в колонтитуле: '))
+exc = int(input('Введите кол-во восклицательных знаков: '))
+a = '~' * ((sign - exc)//2)
+b = '!' * exc
+c = '~' * ((sign - exc)//2)
+print(a + b + c)
+
+
+
