@@ -1,0 +1,110 @@
+violator_songs = [
+['World in My Eyes', 4.86],
+['Sweetest Perfection', 4.43],
+['Personal Jesus', 4.56],
+['Halo', 4.90],
+['Waiting for the Night', 6.07],
+['Enjoy the Silence', 4.20],
+['Policy of Truth', 4.76],
+['Blue Dress', 4.29],
+['Clean', 5.83]
+]
+
+
+
+
+
+
+
+
+
+
+first_list = input('Введите первый список: \n> ').split()
+second_list = input('Введите второй список: \n> ').split()
+first_list.extend(second_list)
+first_list = list(set(first_list))
+print('Новый первый список с уникальными элементами: ', first_list)
+
+
+
+
+shoes_size = []
+feet_size = []
+suitable_list = []
+N = int(input("Кол-во коньков: "))
+
+for number in range(N):
+    print("Размер ", number + 1, " пары: ", end="")
+    size = int(input())
+    shoes_size.append(size)
+
+K = int(input("Кол-во людей: "))
+
+for number in range(K):
+    print("Размер ноги ", number + 1, " человека: ", end="")
+    size = int(input())
+    feet_size.append(size)
+
+for index_shoes in range(N):
+    for index_feet in range(K):
+        if shoes_size[index_shoes] == feet_size[index_feet]:
+            suitable_list.append(feet_size[index_feet])
+
+unique_list = list(set(suitable_list))
+print("Наибольшее кол-во людей, которые могут взять ролики: ", len(unique_list))
+
+
+
+
+n = int(input('Кол-во человек: '))
+k = int(input('Какое число в считалке? '))
+print('Значит, выбывает каждый', k, 'человек.')
+people = list(range(1, n + 1))
+looser = 0
+for _ in range(n - 1):
+    print('Текущий круг людей', people)
+    first = looser % len(people)
+    looser = (first + k - 1) % len(people)
+    print('Начало счёта с номера', people[first])
+    print('Выбывает человек под номером', people[looser])
+    people.remove(people[looser])
+    print()
+print('Остался человек под номером', people)
+
+
+
+
+N = int(input("Кол-во друзей: "))
+K = int(input("Кол-во долговых расписок: "))
+friends_list = []
+
+for _ in range(N):
+    friends_list.append(0)
+
+for number in range(K):
+    print("\n", number + 1, "расписка: ")
+    from_who = int(input("От кого: "))
+    to_who = int(input("Кому: "))
+    how_much = int(input("Сколько: "))
+    friends_list[from_who - 1] += how_much
+    friends_list[to_who - 1] -= how_much
+
+print("Баланс друзей: ")
+for index in range(len(friends_list)):
+    print(index + 1, ": ", friends_list[index])
+    
+    
+    
+    
+import random
+N = int(input('Кол-во чисел: '))
+lst = list()
+for i in range(int(N)):
+    a = int(input('Число: '))
+    lst.append(a)
+print ('Последовательность: ',lst)
+for i in range(len(lst)):
+    if lst[i:] == lst[i:][::-1]:
+        print('Нужно приписать чисел: ',i)
+        print('Сами числа: ',lst[:i][::-1])
+        break
