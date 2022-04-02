@@ -1,0 +1,5 @@
+first_list = input('Введите первый список: \n> ').split()
+second_list = input('Введите второй список: \n> ').split()
+first_list.extend(second_list)
+first_list = list(set(first_list))
+print('Новый первый список с уникальными элементами: ', first_list)
